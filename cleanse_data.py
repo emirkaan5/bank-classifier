@@ -6,7 +6,7 @@ from pathlib import Path
 
 DATA_DIR = Path("data")
 data_list = list(DATA_DIR.rglob("*.csv"))
-for file in DATA_DIR.iterdir():
+for file in data_list:
     
     print("cleaning the data:  " +str(file))
     data = pd.read_csv(file)
