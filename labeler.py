@@ -18,6 +18,10 @@ label_enums = {
 }
 
 for file in DATA_DIR.glob("*.csv"):
+    save_path = OUT_DIR / file.name
+    if Path(save_path).is_file:
+        print(f"{save_path} already exists, skipping...")
+        continue
     print(f"Labeling the file :   {file}")
     data = pd.read_csv(file)
 
