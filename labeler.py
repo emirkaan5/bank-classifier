@@ -18,8 +18,6 @@ label_enums = {
 }
 
 for file in DATA_DIR.glob("*.csv"):
-    if "may" not in str(file):
-        continue
     print(f"Labeling the file :   {file}")
     data = pd.read_csv(file)
 
