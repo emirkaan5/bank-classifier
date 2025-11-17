@@ -37,7 +37,6 @@ Here is data to be labeled:
     Label: 
 
 ONLY RETURN THE LABEL, NOTHING ELSE
-
 """
 
 

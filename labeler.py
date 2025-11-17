@@ -8,11 +8,12 @@ label_enums = {'1':'grocery','2':'dining','3':'travel','4':'shopping','5':'subsc
 
 for file in DATA_DIR.iterdir():
     data = pd.read_csv(file)
+    data['label'] = None  
     for idx, row in data.iterrows():
-        label = input(f"Label this data :\n {row['description']}, {row['amount']} \n Labels:\n  1. Grocery,2. Dining, 3. Travel, 4. Shopping, 5. Subscriptions, 6. Utilities, 7. Health,. 8. Entertainment, 9. other\n ")
+        label = input(f"Label this data :\n {row['description']}, {row['amount']} \n Labels:\n  1. Grocery, 2. Dining, 3. Travel, 4. Shopping, 5. Subscriptions, 6. Utilities, 7. Health, 8. Entertainment, 9. Other\n ")
         
-        row['label'] = label_enums[label]
+        data.at[idx, 'label'] = label_enums[label]  #
 
     save_dir = "labeled/"+str(file).split("/")[1]
-    data.to_csv(save_dir)
+    data.to_csv(save_dir, index=False) 
     print(f"{file} is labeled and saved in : {save_dir}")

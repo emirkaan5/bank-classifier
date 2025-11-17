@@ -1,3 +1,8 @@
 data/*.csv
 .env
 cleaned_data/*.csv
+annotated-CS485-proposal.pdf
+annotated-CS485-proposal.txt
+cs485_progress_report
+prog_report_guide.txt
+requirements.txt
